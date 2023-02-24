@@ -3,7 +3,7 @@
 echo "What is your favorite number?"
 read num
 
-cat << "EOF" > money.txt
+cat << "EOF" > ./ascii/money.txt
 	  __-----__
      ..;;;--'~~~`--;;;..
    /;-~IN GOD WE TRUST~-.\
@@ -21,5 +21,5 @@ cat << "EOF" > money.txt
 EOF
 
 for ((i=1 ; i <= ${num} ; i++)); do
-	cat money.txt
+	cat ./ascii/money.txt
 done
