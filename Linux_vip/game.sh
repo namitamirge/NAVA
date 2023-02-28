@@ -5,6 +5,10 @@ linux() {
          
   echo "which command do you want to know?"
 read command
+
+while [ !$command == none ]
+do
+
                  if [ $command == ls ]; then
                  echo "list all the files and directory "
        elif [ $command == cd ]; then
@@ -14,9 +18,9 @@ read command
         elif [ $command == mkdir ]; then
           echo " To create directory"
         else
-          echo "Sorry, Command not found
-"
+          echo "Sorry, Command not found"
         fi
+done
 }
 echo "Which language do you want to Learn?"
 read  language
