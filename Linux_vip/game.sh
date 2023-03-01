@@ -36,7 +36,11 @@ fi
 done
 }
 quiz() {
-      
+echo "What do you want?Add/Sub"
+read input
+lowerstr=$(echo "$input" | tr '[:upper:]' '[:lower:]')
+
+if [ $lowerstr = add ]; then      
 
       echo "Starting quiz..."
       value1=$(($RANDOM / 100))
@@ -51,6 +55,24 @@ quiz() {
        echo "You got it."
      else 
       echo "That is incorrect."
+fi
+elif [ $lowerstr = sub ]; then
+echo "Starting quiz..."
+      value1=$(($RANDOM / 100))
+
+      value2=$(($RANDOM / 100))
+      sub=$(($value1 - $value2))
+
+      echo "What is $value1 - $value2?"
+     read  answer
+     if [ "$answer" == $sub ];
+     then
+       echo "You got it."
+     else
+      echo "That is incorrect."
+fi
+else 
+echo "Wrong Entry"
      fi
 }
 
